@@ -26,7 +26,7 @@ export class CuestionarioService {
 
   // Recupera las preguntas de Storage. Si no hay ninguna almacenada, las lee del fichero
   public async cargarDatos() {
-      let datosPromesa = await this.storageService.getObject("personas");
+      let datosPromesa = await this.storageService.getObject("0");
       // Cuando se obtiene una respuesta se comprueba que hay datos y se procesan
       if(datosPromesa) {
         this.arrayPreguntas.push(...datosPromesa);
@@ -34,8 +34,6 @@ export class CuestionarioService {
         this.cargarFichero("datos");
       }
     
-   
-
    }
 
   // Lee los datos de un fichero y los almacena en un array CAMBIAR A PRIVATE.
